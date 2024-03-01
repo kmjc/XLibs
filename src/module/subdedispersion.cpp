@@ -742,6 +742,7 @@ void SubbandDedispersion::makeinf(Filterbank &fil)
 		double fcentre = 0.5*(fmin+fmax);
 		double bandwidth = 0.;
 		if (fmax != fmin) bandwidth = (fmax-fmin)/(nchans-1)*nchans;
+		double foff = bandwidth/nchans;
 		double tstart = fil.tstart + dt;
 
 		std::ofstream finf;
@@ -764,7 +765,7 @@ void SubbandDedispersion::makeinf(Filterbank &fil)
 		finf<<" Central freq of low channel (Mhz)      =  "<<fmin<<std::endl;
 		finf<<" Total bandwidth (Mhz)                  =  "<<bandwidth<<std::endl;
 		finf<<" Number of channels                     =  "<<nchans<<std::endl;
-		finf<<" Channel bandwidth (Mhz)                =  "<<fcentre<<std::endl;
+		finf<<" Channel bandwidth (Mhz)                =  "<<foff<<std::endl;
 		finf<<" Data analyzed by                       =  PulsarX"<<std::endl;
 		finf.close();
 	}
