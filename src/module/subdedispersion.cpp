@@ -624,7 +624,7 @@ void SubbandDedispersion::preparedump(Filterbank &fil, int nbits, const string &
 		{
 			double dm = sub.vdm[k];
 			stringstream ss_dm;
-			ss_dm << "DM" /*<< setw(8)*/ << setprecision(2) << fixed << setfill('0') << dm;
+			ss_dm << "DM" /*<< setw(8)*/ << setprecision(3) << fixed << setfill('0') << dm;
 			string s_dm = ss_dm.str();
 			
 			std::string fname = rootname + "_" + s_dm + ".dat";
@@ -694,7 +694,7 @@ void SubbandDedispersion::prepare_dump_presto()
 	{
 		double dm = sub.vdm[k];
 		stringstream ss_dm;
-		ss_dm << "DM" /*<< setw(8)*/ << setprecision(2) << fixed << setfill('0') << dm;
+		ss_dm << "DM" /*<< setw(8)*/ << setprecision(3) << fixed << setfill('0') << dm;
 		string s_dm = ss_dm.str();
 		
 		std::string fname = rootname + "_" + s_dm + ".dat";
@@ -735,7 +735,7 @@ void SubbandDedispersion::makeinf(Filterbank &fil)
 	{
 		double dm = sub.vdm[k];
 		stringstream ss_dm;
-		ss_dm << "DM" /*<< setw(8)*/ << setprecision(2) << fixed << setfill('0') << dm;
+		ss_dm << "DM" /*<< setw(8)*/ << setprecision(3) << fixed << setfill('0') << dm;
 		string s_dm = ss_dm.str();
 
 		std::string basename = rootname + "_" + s_dm;
@@ -788,7 +788,7 @@ void SubbandDedispersion::makeinf(long double tstart, double mean, double stddev
 	{
 		double dm = sub.vdm[k];
 		stringstream ss_dm;
-		ss_dm << "DM" /*<< setw(8)*/ << setprecision(2) << fixed << setfill('0') << dm;
+		ss_dm << "DM" /*<< setw(8)*/ << setprecision(3) << fixed << setfill('0') << dm;
 		string s_dm = ss_dm.str();
 
 		std::string basename = rootname + "_" + s_dm;
